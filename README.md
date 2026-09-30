@@ -44,3 +44,9 @@ pnpm test
 Pruebas de los 71 motores, entradas mixtas, puntuación, colisiones, precisión, memoria, tiempo de preparación, ciclo diario, horario de Madrid, guardado atómico, importación y caché sin conexión. La prueba del service worker necesita una compilación previa.
 
 React + TypeScript + Vite para la interfaz; Phaser para las escenas; IndexedDB para partidas y ajustes. `src/catalog.ts` define las reglas; `src/games/` contiene los motores; `src/model.ts` centraliza estadísticas y validación; `src/storage.ts` gestiona persistencia.
+
+## GitHub Pages
+
+El flujo `.github/workflows/pages.yml` compila, ejecuta las pruebas y publica `dist/` cuando se actualiza `main`. En GitHub, selecciona Settings → Pages → Source: GitHub Actions. La compilación utiliza `ANIMUS_BASE=/Animus/`, incluyendo iconos, manifest y caché sin conexión. La URL prevista es https://atella232.github.io/Animus/.
+
+La cuenta debe permitir Pages para la visibilidad del repositorio. Si el plan no admite Pages en repositorios privados, el repositorio debe hacerse público o utilizar un plan que lo admita antes de activar la publicación.

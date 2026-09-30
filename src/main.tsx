@@ -6,6 +6,6 @@ createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></Re
 function offlineState(state:string){document.documentElement.dataset.offline=state;window.dispatchEvent(new Event('animus-offline'))}
 if(import.meta.env.PROD){
  if('serviceWorker' in navigator){
-  window.addEventListener('load',async()=>{try{await navigator.serviceWorker.register('/sw.js');await navigator.serviceWorker.ready;offlineState('ready')}catch{offlineState('unavailable')}});
+  window.addEventListener('load',async()=>{try{await navigator.serviceWorker.register(import.meta.env.BASE_URL+'sw.js',{scope:import.meta.env.BASE_URL});await navigator.serviceWorker.ready;offlineState('ready')}catch{offlineState('unavailable')}});
  }else offlineState('unavailable');
 }else offlineState('development');
